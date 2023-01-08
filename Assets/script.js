@@ -42,10 +42,44 @@ function PasswordOptions() {
 // Call PasswordOptions Function So It Can Run!
 PasswordOptions();
 
-// Function for getting a random element from an array
-function getRandom(arr) {
+// An Empty Array For Password Specifications To Fall Into Dependent On User Input
+var ValidOptions = [];
 
+// Function To Validate User Input And Push Relevant Arrays Into New Array
+function UserOptions () {
+  // If SpecialInput === True ....
+  if (SpecialInput) {
+    // Push Special Array Into The ValidOptions Array
+    for (var SpecialIndex = 0; SpecialIndex < Special.length; SpecialIndex++) {
+      ValidOptions.push(Special[SpecialIndex]);
+    }
+  }
+  // If NumbersInput === True ....
+  if (NumbersInput) {
+    // Push Numbers Array Into The ValidOptions Array
+    for (var NumberIndex = 0; NumberIndex < Numbers.length; NumberIndex++) {
+      ValidOptions.push(Numbers[NumberIndex]);
+    }
+  }
+  // If LowerInput === True ....
+  if (LowerInput) {
+    // Push Lower Array Into The ValidOptions Array
+    for (var LowerIndex = 0; LowerIndex < Lower.length; LowerIndex++) {
+      ValidOptions.push(Lower[LowerIndex]);
+    }
+  }
+  // If UpperInput === True ....
+  if (UpperInput) {
+    // Push Upper Array Into The ValidOptions Array
+    for (var UpperIndex = 0; UpperIndex < Upper.length; UpperIndex ++) {
+      ValidOptions.push(Upper[UpperIndex]);
+    }
+  }
+  // Print The ValidOptions Array To The Console For Reference
+  console.log("Valid Options Include: " , ValidOptions);
 }
+// Call UserOptions Function So It Can Run!
+UserOptions();
 
 // Function to generate password with user input
 function generatePassword() {
