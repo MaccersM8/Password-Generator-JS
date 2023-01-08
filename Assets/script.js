@@ -39,13 +39,13 @@ function PasswordOptions() {
     console.log("Password Length = " + PasswordLength + " Characters");
   }
 }
-// Call PasswordOptions Function So It Can Run!
-PasswordOptions();
 
 // An Empty Array For Password Specifications To Fall Into Dependent On User Input
 var ValidOptions = [];
 // An Empty Array For Random Password Generation To Fall Into Dependent On User Input
 var RandomOptions = [];
+// An Empty Array For The Final Password Once Generated To Fall Into
+var FinalPassword = [];
 
 // Function To Validate User Input And Push Relevant Arrays Into New Array
 function GeneratePassword() {
@@ -81,8 +81,8 @@ function GeneratePassword() {
   console.log("Valid Options Include: ", ValidOptions);
 
   // Push Valid Options Into A New Array Dependent On User Input
-  for (var RandomIndex = 0; RandomIndex < PasswordLength; RandomIndex ++) {
-    RandomOptions.push(ValidOptions[Math.floor(Math.random()*ValidOptions.length)]);
+  for (var RandomIndex = 0; RandomIndex < PasswordLength; RandomIndex++) {
+    RandomOptions.push(ValidOptions[Math.floor(Math.random() * ValidOptions.length)]);
   }
   // Print Random Options To Console For Reference
   console.log("Random Options Include: ", RandomOptions);
@@ -94,8 +94,8 @@ function GeneratePassword() {
     // At Index 3 Of Random Options Remove 2 Items
     RandomOptions.splice(3, 2);
     // At The End Of The Random Options Array Push 2 Random Items From The Numbers Array
-    RandomOptions.push(Numbers[Math.floor(Math.random()* Numbers.length)]);
-    RandomOptions.push(Numbers[Math.floor(Math.random()* Numbers.length)]);
+    RandomOptions.push(Numbers[Math.floor(Math.random() * Numbers.length)]);
+    RandomOptions.push(Numbers[Math.floor(Math.random() * Numbers.length)]);
   }
 
   // A Variable To Determine If The Random Options Includes Items From The Original Special Array
@@ -103,9 +103,9 @@ function GeneratePassword() {
   // If The User Wanted Special Characters AND Random Options Doesn't Include Random Characters ....
   if (SpecialInput === true & IncludesSpecial === false) {
     // At Index 6 Of Random Options Remove 1 Item
-    RandomOptions.splice(6 , 1);
+    RandomOptions.splice(6, 1);
     // At The End Of The Random Options Array Push 1 Random Item From The Special Array
-    RandomOptions.push(Special[Math.floor(Math.random()* Special.length)]);
+    RandomOptions.push(Special[Math.floor(Math.random() * Special.length)]);
   }
 
   // A Variable To Determine If The Random Options Includes Items From The Original Lower Array
@@ -115,7 +115,7 @@ function GeneratePassword() {
     // At Index 0 Of Random Options Remove 1 Item
     RandomOptions.splice(0, 1);
     // At The End Of The Random Options Array Push 1 Random Item From The Lower Array
-    RandomOptions.push(Lower[Math.floor(Math.random()*Lower.length)]);
+    RandomOptions.push(Lower[Math.floor(Math.random() * Lower.length)]);
   }
 
   // A Variable To Determine If The Random Options Includes Items From The Original Upper Array
@@ -125,31 +125,22 @@ function GeneratePassword() {
     // At Index 7 Of Random Options Remove 1 Item
     RandomOptions.splice(7, 1);
     // At The End Of The Random Options Array Push 1 Random Item From The Upper Array
-    RandomOptions.push(Upper[Math.floor(Math.random()*Upper.length)]);
+    RandomOptions.push(Upper[Math.floor(Math.random() * Upper.length)]);
   }
-
   // Print New RandomOptions To The Console For Reference
   console.log("New Random Options Are: ", RandomOptions);
-}
-// Call UserOptions Function So It Can Run!
-GeneratePassword();
-
-// A Variable To Contain Value Of RandomOptions Array With No Spaces
-var FinalPassword = RandomOptions.join("");
-// Printing Final Password To Console For Reference
-console.log("The Final Password Is: " + FinalPassword);
-
-// Get references to the #generate element
-var generateBtn = document.querySelector('#generate');
-
-// Write password to the #password input
-function writePassword() {
-  var password = generatePassword();
-  var passwordText = document.querySelector('#password');
-
-  passwordText.value = password;
+  // Assign FinalPassword Variable A Value Of The RandomOptions Array With No Spaces
+  FinalPassword = RandomOptions.join("");
+  // Printing Final Password To Console For Reference
+  console.log("The Final Password Is: " + FinalPassword);
 }
 
-// Add event listener to generate button
-generateBtn.addEventListener('click', writePassword);
-
+// Function To Run Processes On The Click Of Generate Button And Display Final Password In Desired Area
+function PrintToHTML() {
+  // Calling The PasswordOptions Function
+  PasswordOptions();
+  // Calling The GeneratePassword Function
+  GeneratePassword();
+  // Print Final Password To The Location Of HTML ID "password"
+  document.getElementById("password").innerHTML = FinalPassword;
+}
