@@ -35,7 +35,7 @@ function PasswordOptions() {
   // Whilst PasswordLength Is Less Than 10 Or Higher Than 64 ....
   while (PasswordLength <= 9 || PasswordLength > 64) {
     // Continue To Prompt User To Provide A Valid Length For The Password And Print Answer To Console For Reference
-    PasswordLength = prompt("Pick A Password Length Between 10 And 63 Characters!");
+    PasswordLength = prompt("Pick A Password Length Between 10 And 64 Characters!");
     console.log("Password Length = " + PasswordLength + " Characters");
   }
 }
