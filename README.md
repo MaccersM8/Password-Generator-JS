@@ -2,7 +2,7 @@
 
 ## Description
 The motivation behind this challenge was to use JavaScript, HTML and CSS to create a program that when ran will generate a random password depending on user input. The parameters of this program are as follows:
-- The password must be between 10 and 63 characters
+- The password must be between 10 and 64 characters
 - The password must contain atleast one of the following character types:
     - Special Characters
     - Numerical Characters
