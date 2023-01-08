@@ -3,7 +3,7 @@
 *::after {
   box-sizing: border-box;
 }
-
+/* Relating To HTML Element, Body Element And Wrapper Class On HTML Document */
 html,
 body,
 .wrapper {
@@ -11,74 +11,79 @@ body,
   margin: 0;
   padding: 0;
 }
-
+/* Relating To Body Element On HTML Document */
 body {
   font-family: sans-serif;
-  background-color: #f9fbfd;
+  background-color: #439A97;
+  ;
 }
-
+/* Relating To Wrapper Class On HTML Document */
 .wrapper {
   padding-top: 30px;
   padding-left: 20px;
   padding-right: 20px;
 }
-
+/* Relating To Header Element On HTML Document */
 header {
   text-align: center;
   padding: 20px;
   padding-top: 0px;
-  color: hsl(206, 17%, 28%);
+  color: white;
 }
-
+/* Relating To Card Class On HTML Document */
 .card {
-  background-color: hsl(0, 0%, 100%);
+  background-color: #62B6B7;
   border-radius: 5px;
   border-width: 1px;
   box-shadow: rgba(0, 0, 0, 0.15) 0px 2px 8px 0px;
-  color: hsl(206, 17%, 28%);
+  color: white;
   font-size: 18px;
   margin: 0 auto;
   max-width: 800px;
   padding: 30px 40px;
 }
-
+/* Relating To Card Header Class On HTML Document */
 .card-header::after {
   content: " ";
   display: block;
   width: 100%;
-  background: #e7e9eb;
+  background: #97DECE;
   height: 2px;
 }
-
+/* Relating To Card Body Class On HTML Document */
 .card-body {
   min-height: 100px;
 }
 
+/* Relating To Card Footer Class On HTML Document */
 .card-footer {
   text-align: center;
 }
 
+/* Relating To Card Footer Class On HTML Document */
 .card-footer::before {
   content: " ";
   display: block;
   width: 100%;
-  background: #e7e9eb;
+  background: #97DECE;
   height: 2px;
 }
 
+/* Relating To Card Footer Class On HTML Document */
 .card-footer::after {
   content: " ";
   display: block;
   clear: both;
 }
 
+/* Relating To Button Class On HTML Document */
 .btn {
   border: none;
-  background-color: hsl(360, 91%, 36%);
+  background-color: white;
   border-radius: 25px;
   box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 6px 0px rgba(0, 0, 0, 0.2) 0px 1px 1px
     0px;
-  color: hsl(0, 0%, 100%);
+  color: #439A97;
   display: inline-block;
   font-size: 22px;
   line-height: 22px;
@@ -88,15 +93,7 @@ header {
   cursor: pointer;
 }
 
-button[disabled] {
-  cursor: default;
-  background: #c0c7cf;
-}
-
-.float-right {
-  float: right;
-}
-
+/* Relating To Password ID On HTML Document */
 #password {
   -webkit-appearance: none;
   -moz-appearance: none;
@@ -112,12 +109,14 @@ button[disabled] {
   text-align: center;
   margin-top: 10px;
   margin-bottom: 10px;
-  border: 2px dashed #c0c7cf;
+  border: 2px dashed #439A97;
   border-radius: 6px;
   resize: none;
   overflow: hidden;
+  color:#439A97;
 }
 
+/* Media Queries For HTML Page */
 @media (max-width: 690px) {
   .btn {
     font-size: 1rem;
@@ -129,7 +128,6 @@ button[disabled] {
     font-size: 1rem;
   }
 }
-
 @media (max-width: 500px) {
   .btn {
     font-size: 0.8rem;

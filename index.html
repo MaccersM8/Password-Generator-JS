@@ -1,21 +1,31 @@
+<!-- Elements Required For HTML Document -->
 <!DOCTYPE html>
 <html lang="en-gb">
+  <!-- Head Element Of The HTML Document-->
   <head>
+    <!-- Required Meta Tags For The HTML Document-->
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <!-- Title Of HTML Document -->
     <title>Password Generator</title>
+    <!-- Link To CSS Style Sheet -->
     <link rel="stylesheet" href="./Assets/style.css" />
   </head>
+  <!-- Body Element Of HTML Document -->
   <body>
     <div class="wrapper">
+      <!-- Header Element OF HTML Document-->
       <header>
         <h1>Password Generator</h1>
       </header>
+      <!-- Sub Section Of HTML Document -->
       <div class="card">
+        <!-- Sub Heading Of HTML Document -->
         <div class="card-header">
           <h2>Generate a Password</h2>
         </div>
+        <!-- Section Where Generated Password Should Be Visible -->
         <div class="card-body">
           <textarea
             readonly
@@ -24,11 +34,13 @@
             aria-label="Generated Password"
           ></textarea>
         </div>
+        <!-- Section For Generate Button -->
         <div class="card-footer">
-          <button onclick="PrintToHTML()" id="generate" class="btn">Generate Password</button>
+          <button onclick="PrintToHTML()" id="generate" class="btn"><strong>Generate Password</strong></button>
         </div>
       </div>
     </div>
+    <!-- Link To JavaScript File-->
     <script src="./Assets/script.js"></script>
   </body>
 </html>
