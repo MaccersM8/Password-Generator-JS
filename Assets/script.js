@@ -44,7 +44,6 @@ PasswordOptions();
 
 // An Empty Array For Password Specifications To Fall Into Dependent On User Input
 var ValidOptions = [];
-
 // An Empty Array For Random Password Generation To Fall Into Dependent On User Input
 var RandomOptions = [];
 
@@ -132,9 +131,13 @@ function GeneratePassword() {
   // Print New RandomOptions To The Console For Reference
   console.log("New Random Options Are: ", RandomOptions);
 }
-
 // Call UserOptions Function So It Can Run!
 GeneratePassword();
+
+// A Variable To Contain Value Of RandomOptions Array With No Spaces
+var FinalPassword = RandomOptions.join("");
+// Printing Final Password To Console For Reference
+console.log("The Final Password Is: " + FinalPassword);
 
 // Get references to the #generate element
 var generateBtn = document.querySelector('#generate');
